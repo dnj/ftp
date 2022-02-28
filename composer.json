@@ -1,5 +1,6 @@
 {
 	"name": "dnj/ftp",
+	"description": "FTP Contracts for PHP",
 	"license": "MIT",
 	"autoload": {
 		"psr-4": {
@@ -20,11 +21,13 @@
 		"friendsofphp/php-cs-fixer": "^3.1"
 	},
 	"scripts": {
+		"test:composer-validate": "composer validate",
 		"test:types": "./vendor/bin/phpstan analyse",
 		"test:phpunit": "vendor/bin/phpunit",
 		"test:codestyle": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no",
 		"test:codestyle:fix": "vendor/bin/php-cs-fixer fix -v --using-cache=no",
 		"test": [
+			"@test:composer-validate",
 			"@test:types",
 			"@test:phpunit",
 			"@test:codestyle"
