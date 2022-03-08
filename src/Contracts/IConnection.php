@@ -102,7 +102,7 @@ interface IConnection extends \Serializable, \JsonSerializable
     /**
      * Returns a list of files in the given directory.
      *
-     * @return array<array{name:string,modify_time:int,size:int,mode:string}>|null array of name of files on success or null on failure
+     * @return array<array{name:string,modify_time:int,size:int,mode:string,type:'dir'|'file'}>|null array of name of files on success or null on failure
      */
     public function ls(string $dirname): ?array;
 
